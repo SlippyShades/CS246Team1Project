@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Metrics;
+using System.Reflection.Emit;
 
 namespace CS246Team1Project.Models
 {
@@ -13,7 +15,9 @@ namespace CS246Team1Project.Models
         public required int LNumber { get; set; }
 
         [Required]
-        public string FullName { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+
+        public string LastName { get; set; } = string.Empty;
 
         [StringLength(10, MinimumLength = 10)]
         public string PhoneNumber { get; set; } = string.Empty;
@@ -33,6 +37,14 @@ namespace CS246Team1Project.Models
         public List<CourseGradeModel> Courses { get; set; } = new List<CourseGradeModel>();
 
         public string Notes { get; set; } = string.Empty;
+
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
 
     }
 }
