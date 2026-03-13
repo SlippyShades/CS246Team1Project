@@ -54,7 +54,7 @@ namespace CS246Team1Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("LNumber,FullName,PhoneNumber,PersonalEmail,LaneEmail,CohortYear,LastUpdate,Notes")] StudentModel studentModel)
+        public async Task<IActionResult> Create([Bind("LNumber,FirstName,LastName,PhoneNumber,PersonalEmail,LaneEmail,CohortYear,LastUpdate,Notes")] StudentModel studentModel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CS246Team1Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("LNumber,FullName,PhoneNumber,PersonalEmail,LaneEmail,CohortYear,LastUpdate,Notes")] StudentModel studentModel)
+        public async Task<IActionResult> Edit(int id, [Bind("LNumber,FirstName,LastName,PhoneNumber,PersonalEmail,LaneEmail,CohortYear,LastUpdate,Notes")] StudentModel studentModel)
         {
             if (id != studentModel.LNumber)
             {

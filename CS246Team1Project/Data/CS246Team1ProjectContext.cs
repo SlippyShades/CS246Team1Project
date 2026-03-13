@@ -14,6 +14,27 @@ namespace CS246Team1Project.Data
         {
         }
 
-        public DbSet<CS246Team1Project.Models.StudentModel> StudentModel { get; set; } = default!;
+        public DbSet<StudentModel> StudentModel { get; set; } = default!;
+        public DbSet<CourseGradeModel> CourseGradeModel { get; set; } = default!;
+        public DbSet<CourseModel> CourseModel { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudentModel>(entity =>
+            {
+                entity.OwnsOne(s => s.Address);
+                entity.HasMany(s => s.Courses)
+                      .WithOne()
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<CourseModel>()
+                .Property(c => c.Term)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

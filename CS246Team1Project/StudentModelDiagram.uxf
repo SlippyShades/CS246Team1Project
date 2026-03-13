@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>40</y>
+      <w>290</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>StudentModel
+--
++LNumber : int
++FirstName : string
++LastName : string
++PhoneNumber : string
++PersonalEmail : string
++LaneEmail : string
++Notes : string
++LastUpdate : DateTime
++Address : AddressModel
++Courses : List&lt;CourseGradeModel&gt;
++CohortYear : string
++FullName : string {readOnly}</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>40</y>
+      <w>230</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>AddressModel
+--
++Id : int
++Street : string
++City : string
++Zipcode : int
++FullAddress : string {readOnly}</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>220</y>
+      <w>240</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>CourseGradeModel
+--
++Id : int
++CurrentGrade : string
++CohortYear : int
++Course : CourseModel
++CoursePrefixOriginal : string
++CourseNumberOriginal : string
++Term : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>230</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>CourseModel
+--
++Id : int
++CoursePrefix : string
++CourseNumber : string
++Term : List&lt;string&gt;
++PassingGrade : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>90</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10;10;80;10</additional_attributes>
+  </element>
+
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>270</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10;10;80;10</additional_attributes>
+  </element>
+
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>280</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10;10;70;10</additional_attributes>
+  </element>
+</diagram>

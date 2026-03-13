@@ -18,6 +18,7 @@ namespace CS246Team1Project.Models
         [Required]
         public string FirstName { get; set; } = string.Empty;
 
+        [Required]
         public string LastName { get; set; } = string.Empty;
 
         [StringLength(10, MinimumLength = 10)]
@@ -31,16 +32,13 @@ namespace CS246Team1Project.Models
 
         public string Notes { get; set; } = string.Empty;
 
-
-
         public DateTime LastUpdate {  get; set; }
 
         public AddressModel Address { get; set; } = new AddressModel();
 
-        public List<CourseGradeModel> CourseGrade { get; set; } = new List<CourseGradeModel>();
+        public List<CourseGradeModel> Courses { get; set; } = new List<CourseGradeModel>();
 
-        public CourseGradeModel CohortYear { get; set; }
-
+        public string CohortYear { get; set; } = string.Empty;
 
         public string FullName
         {
