@@ -30,7 +30,7 @@ namespace CS246Team1Project.Models
         [EmailAddress]
         public string LaneEmail { get; set; } = string.Empty;
 
-        public string Notes { get; set; } = string.Empty;
+        public string? Notes { get; set; }
 
         public DateTime LastUpdate {  get; set; }
 
