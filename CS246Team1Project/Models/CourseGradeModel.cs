@@ -10,9 +10,19 @@
 
         public int Id { get; set; }
 
+        public string CurrentGrade { get; set; }
+
+        public int CohortYear { get; set; }
+
         public CourseModel Course { get; set; } = new CourseModel();
 
-        public string Grade { get; set; } = string.Empty;
+        public CourseModel CoursePrefix { get; set; }
+
+
+        public CourseModel CourseNumber { get; set; }
+
+        public CourseModel Term { get; set; }
+
 
     }
 }

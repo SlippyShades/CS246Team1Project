@@ -11,13 +11,12 @@ namespace CS246Team1Project.Models
 
         public int Zipcode { get; set; }
 
-        public string Country { get; set; } = string.Empty;
 
         public string FullAddress
         {
             get
             {
-                return $"{Street}, {City}, {Zipcode}, {Country}";
+                return $"{Street}, {City}, {Zipcode}";
             }
         }
 

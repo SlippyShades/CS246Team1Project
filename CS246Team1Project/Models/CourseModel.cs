@@ -9,7 +9,9 @@ namespace CS246Team1Project.Models
 
         public string CourseNumber { get; set; } = string.Empty;
 
-        public string MinimumPassingGrade { get; set; } = string.Empty;
+        public List<CourseModel> Term { get; set; }
+
+        public string PassingGrade { get; set; } = string.Empty;
 
     }
 }

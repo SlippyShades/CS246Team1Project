@@ -11,6 +11,7 @@ namespace CS246Team1Project.Models
         {
             LastUpdate = DateTime.Now;
         }
+
         [Key]
         public required int LNumber { get; set; }
 
@@ -28,15 +29,18 @@ namespace CS246Team1Project.Models
         [EmailAddress]
         public string LaneEmail { get; set; } = string.Empty;
 
-        public int CohortYear { get; set; }
+        public string Notes { get; set; } = string.Empty;
+
+
 
         public DateTime LastUpdate {  get; set; }
 
         public AddressModel Address { get; set; } = new AddressModel();
 
-        public List<CourseGradeModel> Courses { get; set; } = new List<CourseGradeModel>();
+        public List<CourseGradeModel> CourseGrade { get; set; } = new List<CourseGradeModel>();
 
-        public string Notes { get; set; } = string.Empty;
+        public CourseGradeModel CohortYear { get; set; }
+
 
         public string FullName
         {
